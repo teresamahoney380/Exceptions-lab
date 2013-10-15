@@ -2,6 +2,7 @@ package lab1;
 
 import javax.swing.JOptionPane;
 
+
 /**
  * The purpose of this challenge is to give you practice time using
  * Java Exception handling techniques.
@@ -17,19 +18,30 @@ import javax.swing.JOptionPane;
  */
 public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
+    private final String PARAM_ERR = "Field cannot be null or zero length";
+    private static boolean error=true;
 
     public static void main(String[] args) {
         Challenge1 app = new Challenge1();
-        
+        while (error){
         String fullName = JOptionPane.showInputDialog("Enter full name:");
         String lastName = app.extractLastName(fullName);
+         }
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
+       
     }
     
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
-        return nameParts[LAST_NAME_IDX];
-    }
+        if(fullName == null || fullName.length() == 0||nameParts.length==0) {
+            error=true;
+           String msg = "Please Enter fisrtname (space) lastname";
+        JOptionPane.showMessageDialog(null, msg); 
+        }else{error=false;}
+        if (error){return(nameParts[LAST_NAME_IDX]="no entry");}else{
+        return nameParts[LAST_NAME_IDX];}
 
+   
+    }
 }
