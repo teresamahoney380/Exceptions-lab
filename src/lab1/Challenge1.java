@@ -20,13 +20,14 @@ public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
     private final String PARAM_ERR = "Field cannot be null or zero length";
     private static boolean error=true;
+    private  static String lastName;
 
     public static void main(String[] args) {
         Challenge1 app = new Challenge1();
         while (error){
         String fullName = JOptionPane.showInputDialog("Enter full name:");
-        String lastName = app.extractLastName(fullName);
-         }
+        lastName = app.extractLastName(fullName);
+        }
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
        
@@ -39,7 +40,7 @@ public class Challenge1 {
            String msg = "Please Enter fisrtname (space) lastname";
         JOptionPane.showMessageDialog(null, msg); 
         }else{error=false;}
-        if (error){return(nameParts[LAST_NAME_IDX]="no entry");}else{
+        if (error){return(nameParts[0]="no entry");}else{
         return nameParts[LAST_NAME_IDX];}
 
    
