@@ -19,8 +19,19 @@ public class NameService {
      * @return the last name
      */
     public String extractLastName(String fullName) {
+        if (fullName == null||fullName.length()==0){
+            throw new ArrayIndexOutOfBoundsException("No name provided.");            
+        }
+       
         String[] nameParts = fullName.split(" ");
+        if (nameParts.length>2){
+            throw new IllegalArgumentException("More than 2 names entered");
+        }
+        if (nameParts.length==1){
+            throw new IllegalArgumentException("First Name and Last Name required");
+        }
         return nameParts[LAST_NAME_IDX];
+        
     }
     
     /**
