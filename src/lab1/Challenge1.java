@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
-    private final String PARAM_ERR = "Field cannot be null or zero length";
+    
     private static boolean error=true;
     private  static String lastName;
 
