@@ -35,11 +35,15 @@ public class Challenge1 {
     
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
-        if(fullName == null || fullName.length() == 0||nameParts.length==0) {
+        if(fullName == null || fullName.length() == 0||nameParts.length==1||
+               nameParts.length>2 ) {
             error=true;
-           String msg = "Please Enter fisrtname (space) lastname";
+           String msg = "Please Enter Fisrtname (space) Lastname";
         JOptionPane.showMessageDialog(null, msg); 
         }else{error=false;}
+        System.out.println(nameParts.length);
+        System.out.println(nameParts[0]);
+        System.out.println(error);
         if (error){return(nameParts[0]="no entry");}else{
         return nameParts[LAST_NAME_IDX];}
 
